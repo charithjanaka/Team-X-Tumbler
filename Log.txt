@@ -1,1 +1,4 @@
+Please add a note here whenever you commit any changes.
 
+11/06/2020 - Charith 
+             Created platform
