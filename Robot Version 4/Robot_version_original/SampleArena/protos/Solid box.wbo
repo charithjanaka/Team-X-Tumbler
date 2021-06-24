@@ -1,0 +1,20 @@
+#VRML_OBJ R2021a utf8
+DEF Colour_box Solid {
+  translation 0.155131 0.0249755 0.251603
+  rotation -2.924290519628376e-16 1 -6.394189457095178e-16 0.7853979908350981
+  children [
+    DEF Color_Box Shape {
+      appearance PBRAppearance {
+        baseColor 1 0 0
+        roughness 1
+        metalness 0
+      }
+      geometry Box {
+        size 0.05 0.05 0.05
+      }
+    }
+  ]
+  boundingObject USE Color_Box
+  physics Physics {
+  }
+}
