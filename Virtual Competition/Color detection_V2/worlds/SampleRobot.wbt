@@ -1,0 +1,184 @@
+#VRML_SIM R2021a utf8
+WorldInfo {
+  coordinateSystem "NUE"
+}
+Viewpoint {
+  orientation -0.0679405533473176 0.9952181668621114 0.07017750037212003 1.6079757057583652
+  position 0.6270383450325384 0.1753541249073256 0.023694911842271543
+}
+TexturedBackground {
+}
+TexturedBackgroundLight {
+}
+RectangleArena {
+}
+Robot {
+  translation 0 0.05 0
+  children [
+    Shape {
+      appearance PBRAppearance {
+        metalness 0
+      }
+      geometry Box {
+        size 0.1 0.1 0.1
+      }
+    }
+    HingeJoint {
+      jointParameters HingeJointParameters {
+        axis 0 0 1
+        anchor 0 0 -0.06
+      }
+      device [
+        RotationalMotor {
+          name "rm1"
+        }
+      ]
+      endPoint Solid {
+        translation 0 0 -0.06
+        rotation 0 0 1 0
+        children [
+          DEF R1 Shape {
+            appearance PBRAppearance {
+              metalness 0
+            }
+            geometry Box {
+              size 0.02 0.02 0.05
+            }
+          }
+          Connector {
+            translation 0 0.12 -0.025
+            children [
+              DEF A1 Shape {
+                appearance PBRAppearance {
+                  metalness 0
+                }
+                geometry Box {
+                  size 0.04 0.3 0.02
+                }
+              }
+              SliderJoint {
+                jointParameters JointParameters {
+                }
+                device [
+                  LinearMotor {
+                    name "lm1"
+                  }
+                ]
+                endPoint Solid {
+                  translation 0 0.2 1.7854879163929196e-10
+                  rotation 0 1 0 -1.57
+                  children [
+                    DEF s1 Shape {
+                      appearance PBRAppearance {
+                        roughness 1
+                        metalness 0
+                      }
+                      geometry Box {
+                        size 0.02 0.1 0.1
+                      }
+                    }
+                  ]
+                  boundingObject USE s1
+                  physics Physics {
+                    mass 0.02
+                  }
+                }
+              }
+            ]
+            boundingObject USE A1
+            physics Physics {
+              mass 0.1
+            }
+          }
+        ]
+        boundingObject USE R1
+        physics Physics {
+          mass 0.01
+        }
+      }
+    }
+    HingeJoint {
+      jointParameters HingeJointParameters {
+        axis 0 0 1
+        anchor 0 0 0.06
+      }
+      device [
+        RotationalMotor {
+          name "rm2"
+        }
+      ]
+      endPoint Solid {
+        translation 0 0 0.06
+        rotation 0 1 0 3.14
+        children [
+          DEF R2 Shape {
+            appearance PBRAppearance {
+              metalness 0
+            }
+            geometry Box {
+              size 0.02 0.02 0.05
+            }
+          }
+          Connector {
+            translation 0 0.12 -0.025
+            children [
+              DEF A2 Shape {
+                appearance PBRAppearance {
+                  roughness 1
+                  metalness 0
+                }
+                geometry Box {
+                  size 0.04 0.3 0.02
+                }
+              }
+              SliderJoint {
+                jointParameters JointParameters {
+                }
+                device [
+                  LinearMotor {
+                    name "lm2"
+                  }
+                ]
+                endPoint Solid {
+                  translation 0 0.2 0
+                  rotation 0 1 0 -1.57
+                  children [
+                    DEF s2 Shape {
+                      appearance PBRAppearance {
+                        roughness 1
+                        metalness 0
+                      }
+                      geometry Box {
+                        size 0.02 0.1 0.1
+                      }
+                    }
+                  ]
+                  boundingObject USE s2
+                  physics Physics {
+                    mass 0.02
+                  }
+                }
+              }
+            ]
+            boundingObject USE A2
+            physics Physics {
+              mass 0.1
+            }
+          }
+        ]
+        name "solid(1)"
+        boundingObject USE R2
+        physics Physics {
+          mass 0.01
+        }
+      }
+    }
+  ]
+  boundingObject Box {
+    size 0.1 0.1 0.1
+  }
+  physics Physics {
+    mass 10
+  }
+  controller "arm_with_camera"
+}

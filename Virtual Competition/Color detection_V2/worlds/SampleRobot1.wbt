@@ -1,0 +1,375 @@
+#VRML_SIM R2021a utf8
+WorldInfo {
+  coordinateSystem "NUE"
+}
+Viewpoint {
+  orientation 0.19928876934028023 -0.9638181224046499 -0.17702715424253984 4.793897646135777
+  position 1.7402216879982952 0.7738508937423795 0.11547494363768052
+}
+TexturedBackground {
+}
+TexturedBackgroundLight {
+}
+RectangleArena {
+}
+Robot {
+  translation 0 0.05 0
+  children [
+    Shape {
+      appearance PBRAppearance {
+        metalness 0
+      }
+      geometry Box {
+        size 0.1 0.1 0.1
+      }
+    }
+    HingeJoint {
+      jointParameters HingeJointParameters {
+        axis 0 0 1
+        anchor 0 0 -0.06
+      }
+      device [
+        RotationalMotor {
+          name "rm1"
+        }
+      ]
+      endPoint Solid {
+        translation 0 0 -0.06
+        rotation 0 0 1 0
+        children [
+          DEF R1 Shape {
+            appearance PBRAppearance {
+              metalness 0
+            }
+            geometry Box {
+              size 0.02 0.02 0.05
+            }
+          }
+          Connector {
+            translation 0 0.12 -0.025
+            children [
+              DEF A1 Shape {
+                appearance PBRAppearance {
+                  metalness 0
+                }
+                geometry Box {
+                  size 0.04 0.3 0.02
+                }
+              }
+              SliderJoint {
+                jointParameters JointParameters {
+                }
+                device [
+                  LinearMotor {
+                    name "lm1"
+                  }
+                ]
+                endPoint Solid {
+                  translation 0 0.2 0
+                  rotation 0 1 0 -1.57
+                  children [
+                    DEF s1 Shape {
+                      appearance PBRAppearance {
+                        roughness 1
+                        metalness 0
+                      }
+                      geometry Box {
+                        size 0.02 0.1 0.1
+                      }
+                    }
+                    HingeJoint {
+                      jointParameters HingeJointParameters {
+                        anchor 0.06 0 0
+                      }
+                      device [
+                        RotationalMotor {
+                          name "rm3"
+                        }
+                      ]
+                      endPoint Solid {
+                        translation -0.03 0 0
+                        rotation 0 1 0 1.57
+                        children [
+                          DEF R1 Shape {
+                            appearance PBRAppearance {
+                              metalness 0
+                            }
+                            geometry Box {
+                              size 0.02 0.02 0.05
+                            }
+                          }
+                          Connector {
+                            translation 0.05 0 -0.025
+                            rotation 0 0 1 -1.57
+                            children [
+                              DEF A1 Shape {
+                                appearance PBRAppearance {
+                                  metalness 0
+                                }
+                                geometry Box {
+                                  size 0.04 0.2 0.02
+                                }
+                              }
+                              Solid {
+                                translation 0 0.07 0.06
+                                children [
+                                  Shape {
+                                    appearance PBRAppearance {
+                                      roughness 1
+                                      metalness 0
+                                    }
+                                    geometry Box {
+                                      size 0.02 0.02 0.15
+                                    }
+                                  }
+                                ]
+                              }
+                              Solid {
+                                translation 0 0.05 0.12
+                                children [
+                                  Camera {
+                                    rotation 1 0 0 3.14
+                                    name "CAM"
+                                    fieldOfView 1
+                                    recognition Recognition {
+                                    }
+                                  }
+                                ]
+                                name "solid(1)"
+                              }
+                            ]
+                            boundingObject USE A1
+                            physics Physics {
+                              mass 0.01
+                            }
+                          }
+                        ]
+                        name "solid(1)"
+                        boundingObject USE R1
+                        physics Physics {
+                          mass 0.01
+                        }
+                      }
+                    }
+                  ]
+                  boundingObject USE s1
+                  physics Physics {
+                    mass 0.02
+                  }
+                }
+              }
+            ]
+            boundingObject USE A1
+            physics Physics {
+              mass 0.1
+            }
+          }
+        ]
+        name "solid(2)"
+        boundingObject USE R1
+        physics Physics {
+          mass 0.01
+        }
+      }
+    }
+    HingeJoint {
+      jointParameters HingeJointParameters {
+        axis 0 0 1
+        anchor 0 0 0.06
+      }
+      device [
+        RotationalMotor {
+          name "rm2"
+        }
+      ]
+      endPoint Solid {
+        translation 0 0 0.06
+        rotation 0 1 0 3.14
+        children [
+          DEF R1 Shape {
+            appearance PBRAppearance {
+              metalness 0
+            }
+            geometry Box {
+              size 0.02 0.02 0.05
+            }
+          }
+          Connector {
+            translation 0 0.12 -0.025
+            children [
+              DEF A1 Shape {
+                appearance PBRAppearance {
+                  metalness 0
+                }
+                geometry Box {
+                  size 0.04 0.3 0.02
+                }
+              }
+              SliderJoint {
+                jointParameters JointParameters {
+                }
+                device [
+                  LinearMotor {
+                    name "lm2"
+                  }
+                ]
+                endPoint Solid {
+                  translation 0 0.2 0
+                  rotation 0 1 0 -1.57
+                  children [
+                    DEF s1 Shape {
+                      appearance PBRAppearance {
+                        roughness 1
+                        metalness 0
+                      }
+                      geometry Box {
+                        size 0.02 0.1 0.1
+                      }
+                    }
+                  ]
+                  boundingObject USE s1
+                  physics Physics {
+                    mass 0.02
+                  }
+                }
+              }
+            ]
+            boundingObject USE A1
+            physics Physics {
+              mass 0.1
+            }
+          }
+        ]
+        name "solid(1)"
+        boundingObject USE R1
+        physics Physics {
+          mass 0.01
+        }
+      }
+    }
+  ]
+  boundingObject Box {
+    size 0.1 0.1 0.1
+  }
+  physics Physics {
+    mass 10
+  }
+  controller "arm_with_camera"
+}
+Solid {
+  translation -0.35 0.05 0
+  children [
+    DEF bx Shape {
+      appearance PBRAppearance {
+        roughness 1
+        metalness 0
+      }
+      geometry Box {
+        size 0.1 0.1 0.1
+      }
+    }
+    DEF side1 Solid {
+      translation 0 0 0.05
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 1 0 0
+            roughness 1
+            metalness 0
+          }
+          geometry Box {
+            size 0.1 0.1 0.001
+          }
+        }
+      ]
+    }
+    DEF side2 Solid {
+      translation 0 0 -0.05
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0 1 0
+            roughness 1
+            metalness 0
+          }
+          geometry Box {
+            size 0.1 0.1 0.001
+          }
+        }
+      ]
+      name "solid(1)"
+    }
+    DEF top Solid {
+      translation 0 0.05 0
+      rotation 1 0 0 1.57
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0 0 1
+            roughness 1
+            metalness 0
+          }
+          geometry Box {
+            size 0.1 0.1 0.001
+          }
+        }
+      ]
+      name "solid(2)"
+    }
+    DEF bottom Solid {
+      translation 0 -0.05 0
+      rotation 1 0 0 1.57
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 1 0 0
+            roughness 1
+            metalness 0
+          }
+          geometry Box {
+            size 0.1 0.1 0.001
+          }
+        }
+      ]
+      name "solid(3)"
+    }
+    DEF front Solid {
+      translation -0.05 0 0
+      rotation 0 1 0 1.57
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0 1 0
+            roughness 1
+            metalness 0
+          }
+          geometry Box {
+            size 0.1 0.1 0.001
+          }
+        }
+      ]
+      name "solid(4)"
+    }
+    DEF back Solid {
+      translation 0.05 0 0
+      rotation 0 1 0 1.57
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0 0 1
+            roughness 1
+            metalness 0
+          }
+          geometry Box {
+            size 0.1 0.1 0.001
+          }
+        }
+      ]
+      name "solid(5)"
+    }
+  ]
+  boundingObject USE bx
+  physics Physics {
+    mass 0.001
+  }
+}
