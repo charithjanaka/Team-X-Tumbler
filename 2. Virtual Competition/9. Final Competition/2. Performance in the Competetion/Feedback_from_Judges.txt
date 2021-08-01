@@ -8,7 +8,7 @@ This is our very first robotics competition experience.
 Feedback
 
 * 3D modeling and realworld modeling (including modeling physics) of the robot and the sensors was very good. 
-* Our algorithms were appreciated and told us some good coding practices to follow in the future competetions.
+* Our algorithms were appreciated and told us some good coding practices to follow in the future competitions.
 
-This discussion is only for the purpose of remembering us, how we did in the competetion. We think as a team, our achievement is more than enough, in our very first robotics competition. 
+This discussion is only for the purpose of remembering us, how we did in the competition. We think as a team, our achievement is more than enough, in our very first robotics competition. 
 
